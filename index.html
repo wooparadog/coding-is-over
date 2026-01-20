@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Coding by Hand Is Over</title>
+    <meta
+      name="description"
+      content="A live wall of tweets from people saying coding by hand is over."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700&family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"
+    ></script>
+    <script
+      async
+      src="https://platform.twitter.com/widgets.js"
+      charset="utf-8"
+      id="twitter-wjs"
+    ></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div class="hero-text">
+          <p class="eyebrow">Signal from the feed</p>
+          <h1>Coding by hand is over</h1>
+          <p class="lede">
+            A running collection of tweets from builders, founders, and
+            researchers pointing to the same shift. The embeds below render
+            directly from Twitter using the official widget.
+          </p>
+          <div class="meta">
+            <span class="chip">Updated via YAML</span>
+            <span class="chip">Cloudflare ready</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <p class="hero-card-title">How it works</p>
+          <ol>
+            <li>Add tweet URLs in <code>quotes.yaml</code>.</li>
+            <li>Deploy this folder to Cloudflare.</li>
+            <li>The wall renders with the official widget.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="tweet-wall">
+        <div class="section-title">
+          <h2>The wall</h2>
+          <p>Each embed is loaded live from Twitter.</p>
+        </div>
+        <div id="loading" class="status">Loading tweets...</div>
+        <div id="tweet-grid" class="tweet-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Want to add more? Update <code>quotes.yaml</code> and redeploy.
+      </p>
+    </footer>
+
+    <noscript>
+      <p class="status">
+        This page needs JavaScript to load the tweet embeds.
+      </p>
+    </noscript>
+  </body>
+</html>

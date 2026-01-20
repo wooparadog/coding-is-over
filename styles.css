@@ -1,0 +1,239 @@
+:root {
+  color-scheme: light;
+  --ink: #101010;
+  --muted: #4c4c4c;
+  --paper: #f6f1e6;
+  --accent: #ff5a3c;
+  --accent-2: #ffd65c;
+  --card: #ffffff;
+  --shadow: 0 22px 45px rgba(16, 16, 16, 0.15);
+  --stroke: rgba(16, 16, 16, 0.12);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
+  color: var(--ink);
+  background: radial-gradient(
+      circle at 15% 15%,
+      rgba(255, 214, 92, 0.45),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255, 90, 60, 0.35),
+      transparent 42%
+    ),
+    linear-gradient(135deg, #f8f4ec 0%, #f2e6d8 100%);
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(
+      rgba(16, 16, 16, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(16, 16, 16, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 64px 24px 72px;
+}
+
+h1,
+h2,
+.hero-card-title {
+  font-family: "Fraunces", "Times New Roman", serif;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 4vw, 4.6rem);
+  margin: 12px 0 16px;
+  line-height: 1.02;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  margin: 0 0 8px;
+}
+
+p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  align-items: center;
+  margin-bottom: 56px;
+}
+
+.hero-text .lede {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 34rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+
+.meta {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--stroke);
+  background: rgba(255, 255, 255, 0.6);
+  font-size: 0.86rem;
+}
+
+.hero-card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 24px 26px;
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+}
+
+.hero-card-title {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.hero-card ol {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.tweet-wall {
+  margin-top: 24px;
+}
+
+.section-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.tweet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  min-height: 120px;
+}
+
+.tweet-card {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 12px;
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  animation: floatIn 0.6s ease forwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+.tweet-card.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.tweet-card blockquote {
+  margin: 0;
+}
+
+.status {
+  font-size: 0.95rem;
+  padding: 16px;
+  border: 1px dashed var(--stroke);
+  border-radius: 12px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.7);
+  margin-bottom: 16px;
+}
+
+footer {
+  padding: 24px;
+  text-align: center;
+  color: var(--muted);
+}
+
+footer code {
+  font-weight: 600;
+}
+
+code {
+  font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
+  background: rgba(16, 16, 16, 0.08);
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 0.92rem;
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 720px) {
+  main {
+    padding: 48px 18px 64px;
+  }
+
+  .section-title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-card {
+    order: -1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tweet-card {
+    animation: none;
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}

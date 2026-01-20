@@ -1,0 +1,13 @@
+{
+  "name": "coding-is-over",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Static tweet wall hosted on Cloudflare Pages.",
+  "scripts": {
+    "dev": "wrangler pages dev .",
+    "deploy": "wrangler pages publish ."
+  },
+  "devDependencies": {
+    "wrangler": "^3.109.1"
+  }
+}
