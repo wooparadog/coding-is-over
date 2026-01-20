@@ -40,6 +40,16 @@ const buildTweetCard = (quote, index) => {
 
   blockquote.appendChild(link);
   card.appendChild(blockquote);
+
+  if (typeof quote.source === "string") {
+    const trimmedSource = quote.source.trim();
+    if (trimmedSource) {
+      const source = document.createElement("p");
+      source.className = "quote-source";
+      source.textContent = `Source: ${trimmedSource}`;
+      card.appendChild(source);
+    }
+  }
   return card;
 };
 

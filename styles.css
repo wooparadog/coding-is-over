@@ -175,6 +175,12 @@ p {
   margin: 0;
 }
 
+.quote-source {
+  margin: 10px 2px 2px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
 .status {
   font-size: 0.95rem;
   padding: 16px;
