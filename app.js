@@ -19,11 +19,11 @@ const hideStatus = () => {
 };
 
 const renderEmptyState = () => {
-  showStatus("No tweets found. Add URLs in quotes.yaml.");
+  showStatus("No quotes found. Add URLs in quotes.yaml.");
 };
 
 const renderError = (error) => {
-  showStatus(`Could not load tweets. ${error}`);
+  showStatus(`Could not load quotes. ${error}`);
 };
 
 const buildTweetCard = (quote, index) => {
@@ -36,7 +36,7 @@ const buildTweetCard = (quote, index) => {
 
   const link = document.createElement("a");
   link.href = quote.url;
-  link.textContent = quote.label || quote.url;
+  link.textContent = quote.url;
 
   blockquote.appendChild(link);
   card.appendChild(blockquote);

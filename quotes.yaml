@@ -1,7 +1,3 @@
 quotes:
-  - url: "https://twitter.com/username/status/1234567890123456789"
-    label: "Replace with a real tweet URL"
-  - url: "https://twitter.com/username/status/1234567890123456790"
-    label: "Add another tweet from a different person"
-  - url: "https://twitter.com/username/status/1234567890123456791"
-    label: "Keep adding as many as you want"
+  - url: "https://twitter.com/bcherny/status/2004887829252317325"
+  - url: "https://twitter.com/rough__sea/status/2013280952370573666"

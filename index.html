@@ -30,44 +30,14 @@
   <body>
     <main>
       <section class="hero">
-        <div class="hero-text">
-          <p class="eyebrow">Signal from the feed</p>
-          <h1>Coding by hand is over</h1>
-          <p class="lede">
-            A running collection of tweets from builders, founders, and
-            researchers pointing to the same shift. The embeds below render
-            directly from Twitter using the official widget.
-          </p>
-          <div class="meta">
-            <span class="chip">Updated via YAML</span>
-            <span class="chip">Cloudflare ready</span>
-          </div>
-        </div>
-        <div class="hero-card">
-          <p class="hero-card-title">How it works</p>
-          <ol>
-            <li>Add tweet URLs in <code>quotes.yaml</code>.</li>
-            <li>Deploy this folder to Cloudflare.</li>
-            <li>The wall renders with the official widget.</li>
-          </ol>
-        </div>
+        <h1>Coding by hand is over</h1>
       </section>
 
       <section class="tweet-wall">
-        <div class="section-title">
-          <h2>The wall</h2>
-          <p>Each embed is loaded live from Twitter.</p>
-        </div>
-        <div id="loading" class="status">Loading tweets...</div>
+        <div id="loading" class="status">Loading quotes...</div>
         <div id="tweet-grid" class="tweet-grid" aria-live="polite"></div>
       </section>
     </main>
-
-    <footer>
-      <p>
-        Want to add more? Update <code>quotes.yaml</code> and redeploy.
-      </p>
-    </footer>
 
     <noscript>
       <p class="status">
